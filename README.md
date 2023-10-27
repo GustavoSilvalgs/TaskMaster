@@ -11,7 +11,6 @@ classDiagram
     - String email
     - String password
   }
-
   class Task {
     - Long id
     - String title
@@ -20,12 +19,12 @@ classDiagram
     - String status
     - String priority
   }
-
   class TaskList {
     - Long id
     - String name
   }
 
-  User "1" -- "N" Task : has
-  TaskList "1" -- "N" Task : contains
+  User "1" -- "*" Task : has
+  User "1" -- "*" TaskList : has
+  TaskList "1" -- "*" Task : contains
 ```
